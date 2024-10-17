@@ -1,0 +1,31 @@
+<div class="w-full  bg-blue-400/30  flex flex-col items-center justify-center h-[100vh] {{st}}">
+    <h1 class="text-2xl p-5 my-5 flex justify-center  text-center rounded-md bg-blue-800 text-white w-1/3 {{title}}">
+        <span *ngIf="valor" class="inline-block w-full"><marquee direction="right" class="w-full " >Agregar usuario </marquee></span>
+        <span *ngIf="!valor" class="inline-block w-2/4"><marquee direction="right" >Registrate </marquee></span>
+    </h1>
+    <form  class="w-1/3 {{form}}  rounded-lg ">
+        <app-entrada-datos type="text" [contacto]="contacto" text='Nombre' model="contacto.nombre" placeholder="Introduzca su nombre"></app-entrada-datos>
+        <app-entrada-datos type="text" [contacto]="contacto" text="Apellidos" placeholder="Introduzca sus apellidos"></app-entrada-datos>
+        <app-entrada-datos type="password" [contacto]="contacto" text="Contraseña" placeholder="Cree una Contraseña"></app-entrada-datos>
+        <app-entrada-datos type="email" [contacto]="contacto" text="Correo" placeholder="Introduzca su correo electronico"></app-entrada-datos>
+        <app-entrada-datos type="number" [contacto]="contacto" text="Telefono" placeholder="Introduzca su Numero telefonico"></app-entrada-datos>
+        <app-entrada-datos *ngIf="valor" type="checkbox" [contacto]="contacto" text="rol"></app-entrada-datos>
+        <div class="w-full flex justify-evenly mt-5">
+            <button *ngIf="!valor" (click)="agregarUsuario()" class="bg-blue-900 p-2 rounded-sm text-white shadow-lg shadow-black/90">Registrarse</button>
+            <button *ngIf="!valor" routerLink="/login" class="bg-blue-900  p-2 rounded-sm text-white shadow-lg shadow-black/90">Volver al login</button>
+            <button *ngIf="valor" (click)="agregarUsuario()" class="bg-blue-900  p-2 rounded-sm text-white shadow-lg shadow-black/90">Guardar</button>
+        </div>
+    </form>
+
+
+
+
+<!-- <button class="fixed top-10 bg-blue-700 p-2 text-white rounded-xl right-20" popovertarget="modal">modal</button>
+    <div id="modal" class="w-1/2 h-[50vh] bg-blue-800  text-white" popover>
+        <h2 class="w-full text-center p-5 bg-transparent/30">modal </h2>
+        <p class="w-full p-5 text-justify">Esta es la modal Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nostrum nobis laudantium consequuntur cumque aspernatur in placeat error possimus eum ut dignissimos doloribus neque, expedita porro sapiente dicta! Quisquam, veritatis! Lorem ipsum dolor sit amet consectetur adipisicing elit. A animi odit, vero asperiores itaque corporis explicabo hic aspernatur nam omnis molestiae id facere quibusdam sequi praesentium, voluptatibus quis earum illo!</p>
+        <div class="w-full flex justify-center">
+            <button class="bg-blue-700 p-2 text-white rounded-xl right-20" popovertarget="modal">cerrar modal</button>
+        </div>
+    </div>
+</div>-->

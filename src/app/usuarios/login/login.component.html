@@ -1,0 +1,24 @@
+<div class="w-full h-screen flex justify-center ">
+    <h1 class="w-1/2 h-screen flex justify-center  bg-blue-200   items-center">
+        <img class="w-full h-full opacity-50" src="https://turistium.com/wp-content/uploads/2017/04/turistium-exito.jpg" alt="">
+    </h1>
+    <form class=" w-1/2 flex flex-col justify-center bg-blue-200 px-40">
+        <h2 class="w-full text-center bg-blue-900 text-blue-200 rounded p-2 ">Ingrese sus credenciales</h2>
+        <app-entrada-datos type="text" [contacto]="contacto" text="Nombre" placeholder="Introduzca su nombre de usuario" class="my-5"></app-entrada-datos>
+        <app-entrada-datos type="password" [contacto]="contacto" text="Contraseña" placeholder="Introduzca su contraseña" ></app-entrada-datos>
+        <div class="w-full flex justify-center">
+            <button class="p-2 mt-5 hover:shadow-lg hover:shadow-black/50 hover:scale-[101%] duration-200 bg-blue-600 rounded text-white" (click)="iniciarSesion()" >Iniciar sesion</button>
+        </div>
+        <span class="text-center p-5">No tienes una cuenta? 
+            <a class="px-1 text-blue-700 cursor-pointer hover:border-b hover:border-blue-500" (click)="irAlRegistro()" >Registrate</a>
+        </span>
+    </form>
+</div>
+<div *ngIf="!modal" class="w-full h-screen bg-black/50 fixed top-0 right-0 ">
+    <div class="fixed rounded p-5 flex justify-evenly flex-col items-center top-[20%] left-1/3 w-1/3 text-blue-200 bg-blue-950 border border-blue-200 shadow-2xl shadow-black h-[60vh]" >
+        <h1 class="text-blue-950 p-2 text-center bg-blue-200 w-full">Datos incorrectos</h1>
+        <img class="w-1/6" src="https://img.icons8.com/?size=48&id=12226&format=png" alt="">
+        <span>En caso de no tener una cuenta <a class="text-white border-b" routerLink="/registro" href="">Registrate</a></span>
+        <button class="p-2 bg-blue-600 text-white rounded w-40" (click)="cerrarModal()">Cerrar</button>
+    </div>
+</div>
